@@ -11,18 +11,18 @@ export const JOLLOF_MENU: MenuItem[] = [
     // MAIN DISHES (10 items)
     {
         id: "main-1",
-        name: "Party Smoky Jollof Rice",
+        name: "Pounded yam and Egusi",
         price: 5000,
         image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=500&h=400&fit=crop",
-        description: "A delicious blend of rice, tomatoes, and spices, perfect for any occasion.",
+        description: "A delicious blend of yam, tomatoes, and spices, perfect for any occasion.",
         category: "main"
     },
     {
         id: "main-2",
-        name: "Coconut Rice",
+        name: "Coconut burger",
         price: 4500,
         image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500&h=400&fit=crop",
-        description: "Fragrant rice cooked in rich coconut milk with aromatic spices.",
+        description: "Fragrant burger cooked in rich coconut milk with aromatic spices.",
         category: "main"
     },
     {
