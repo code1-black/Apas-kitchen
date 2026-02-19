@@ -14,17 +14,14 @@ interface CartItem extends MenuItem {
 
 interface StoreCart {
     items: CartItem[]
-    totalPrice: number
     addItem: (product: MenuItem) => void
     removeItem: (productId: string) => void 
     clearCart: () => void
+    getTotalPrice: () => number
 }
 
 export const useCart = create<StoreCart>((set, get) => ({
     items: [],
-    get totalPrice() {
-        return get().items.reduce((total, item) => total + (item.price * item.quantity), 0);
-    },
     addItem: (product) => set((state) => {
         const existingItem = state.items.find(item => item.id === product.id);
         if (existingItem) {
@@ -40,5 +37,9 @@ export const useCart = create<StoreCart>((set, get) => ({
     removeItem: (productId) => set((state) => ({
         items: state.items.filter(item => item.id !== productId)
     })),
-    clearCart: () => set({ items: [] })
+    clearCart: () => set({ items: [] }),
+    getTotalPrice: () => {
+        const items = get().items;
+        return items.reduce((total, item) => total + (item.price * item.quantity), 0);
+    }
 }));

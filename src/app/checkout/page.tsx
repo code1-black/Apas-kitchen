@@ -3,12 +3,31 @@ import {useCart} from '@/store/useCart';
 import Link from 'next/link';
 
 export default function CheckoutPage() {
-    const {items, totalPrice, clearCart} = useCart();
+    const {items, getTotalPrice, clearCart} = useCart();
+    const totalPrice = getTotalPrice();
     
     const sendOrder = () => {
-        const phone = '2348056077430'
-        const itemSummary = items.map((i) => `${i.quantity} × ${i.name}`).join(', ');
-        const message = `New Order: ${itemSummary}. Total: ₦${(totalPrice / 100).toFixed(2)}`;
+        const phone = '2348056077430';
+        
+        // Create a well-formatted message
+        let message = `🍽️ *NEW ORDER FROM FOOD HUB* 🍽️\n\n`;
+        message += `📋 *ORDER DETAILS:*\n`;
+        message += `${'-'.repeat(30)}\n`;
+        
+        items.forEach((item, index) => {
+            const itemTotal = (item.price * item.quantity) / 100;
+            message += `${index + 1}. *${item.name}*\n`;
+            message += `   Qty: ${item.quantity} × ₦${(item.price / 100).toFixed(2)}\n`;
+            message += `   Subtotal: ₦${itemTotal.toFixed(2)}\n\n`;
+        });
+        
+        message += `${'-'.repeat(30)}\n`;
+        message += `💰 *TOTAL: ₦${(totalPrice / 100).toFixed(2)}*\n`;
+        message += `${'-'.repeat(30)}\n\n`;
+        message += `📞 Please confirm this order and let me know the delivery address.\n`;
+        message += `🚚 Delivery is FREE!\n\n`;
+        message += `Thank you for choosing Food Hub! 😊`;
+        
         const encodedMessage = encodeURIComponent(message);
         window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
         clearCart();

@@ -4,7 +4,7 @@ export interface MenuItem {
     description?: string;
     price: number;
     image: string;
-    category: 'main' | 'side-dish' | 'proteins';
+    category: 'main' | 'side-dish' | 'proteins' | 'drinks';
 }
 
 export const JOLLOF_MENU: MenuItem[] = [
@@ -252,6 +252,88 @@ export const JOLLOF_MENU: MenuItem[] = [
         image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&h=400&fit=crop&sat=1.3",
         description: "Tender chicken skewers with traditional suya seasoning.",
         category: "proteins"
+    },
+
+    // DRINKS (10 items)
+    {
+        id: "drink-1",
+        name: "Fresh Orange Juice",
+        price: 800,
+        image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&h=400&fit=crop",
+        description: "Freshly squeezed orange juice, packed with vitamin C.",
+        category: "drinks"
+    },
+    {
+        id: "drink-2",
+        name: "Chapman Cocktail",
+        price: 1200,
+        image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&h=400&fit=crop",
+        description: "Nigerian cocktail with grenadine, cucumber, and citrus fruits.",
+        category: "drinks"
+    },
+    {
+        id: "drink-3",
+        name: "Zobo Drink",
+        price: 600,
+        image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&h=400&fit=crop&hue=300",
+        description: "Hibiscus tea with ginger, cucumber, and natural spices.",
+        category: "drinks"
+    },
+    {
+        id: "drink-4",
+        name: "Tiger Nut Drink",
+        price: 700,
+        image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&h=400&fit=crop&hue=30",
+        description: "Creamy tiger nut milk, naturally sweet and nutritious.",
+        category: "drinks"
+    },
+    {
+        id: "drink-5",
+        name: "Coca Cola",
+        price: 400,
+        image: "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=500&h=400&fit=crop",
+        description: "Classic Coca Cola, ice cold and refreshing.",
+        category: "drinks"
+    },
+    {
+        id: "drink-6",
+        name: "Sprite",
+        price: 400,
+        image: "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=500&h=400&fit=crop",
+        description: "Crisp lemon-lime soda, perfect for any meal.",
+        category: "drinks"
+    },
+    {
+        id: "drink-7",
+        name: "Fanta Orange",
+        price: 400,
+        image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&h=400&fit=crop&sat=1.5",
+        description: "Orange flavored soda with a burst of citrus taste.",
+        category: "drinks"
+    },
+    {
+        id: "drink-8",
+        name: "Bottled Water",
+        price: 200,
+        image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&h=400&fit=crop",
+        description: "Pure bottled water, essential for hydration.",
+        category: "drinks"
+    },
+    {
+        id: "drink-9",
+        name: "Pineapple Juice",
+        price: 900,
+        image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&h=400&fit=crop&hue=60",
+        description: "Fresh pineapple juice, tropical and sweet.",
+        category: "drinks"
+    },
+    {
+        id: "drink-10",
+        name: "Watermelon Juice",
+        price: 850,
+        image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&h=400&fit=crop&hue=120",
+        description: "Refreshing watermelon juice, perfect for hot days.",
+        category: "drinks"
     }
 ]
 
